@@ -12,6 +12,9 @@ html {
   inline-size: 1200px;
   block-size: 100%;
   margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: #fff;
   font-family: "Fira Sans Condensed", sans-serif;
   font-size: 18px;
@@ -66,7 +69,6 @@ ol {
   font-size: 75px;
   line-height: 70.5px;
   text-transform: uppercase;
-  margin-top: 30px;
 }
 
 .content__accent {
@@ -77,15 +79,13 @@ ol {
   display: flex;
   align-items: flex-end;
   gap: 30px;
-  margin-top: 105px;
 }
 
 .content__details {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  height: 100%;
-  inline-size: 380px;
+  inline-size: 399px;
   flex-shrink: 0;
   gap: 30px;
 }
@@ -129,7 +129,7 @@ ol {
   line-height: 16.2px;
 
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -182,15 +182,10 @@ ol {
   overflow-y: auto;
 }
 
-.content__list-container::-webkit-scrollbar {
-  width: 4px;
-}
-
 .result {
   display: flex;
   flex-direction: column;
-
-  margin-left: 30px;
+  gap: 25px;
 }
 
 .result__video {
@@ -205,20 +200,28 @@ ol {
   block-size: 386px;
   position: relative;
   overflow: hidden;
-  margin-bottom: 20px;
 }
 
 .search-form {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 10px;
 }
 
 .search-form__textfield {
-  background-color: #1b1919;
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  padding: 2px 0;
   color: #fff;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  inline-size: 225px;
 }
+
 .search-form__fieldset {
   border: none;
 }
@@ -226,8 +229,6 @@ ol {
 .search-form__fieldset-title {
   font-weight: 400;
   font-size: 18px;
-  line-height: 21.6px;
-  margin-bottom: 5px;
 }
 
 .search-form__checkbox-list {
@@ -261,7 +262,7 @@ ol {
   opacity: 1;
 }
 
-.search-form__label:hover {
+.search-form__label:hover:not(:has(.search-form__textfield)) {
   text-decoration: underline;
 }
 
